@@ -57,7 +57,7 @@ class TicTacGUI:
         
     def setup_screen(self):
         """
-        Create GUI frame and add handlers.
+        Create pygame display and load images
         """
         self._screen = pygame.display.set_mode((GUI_WIDTH, GUI_HEIGHT))
         self._screen_rect = self._screen.get_rect()
@@ -295,4 +295,9 @@ def run_gui(board_size, ai_player, ai_function, reverse=False):
     """
     gui = TicTacGUI(board_size, ai_player, ai_function, reverse)
 
-run_gui(3,tttboard.PLAYERO,tttai.mm_move_wrapper)
+
+if __name__ == "__main__":
+    """
+    run gui when module loads
+    """
+    run_gui(3,tttboard.PLAYERO,tttai.mm_move_wrapper)
