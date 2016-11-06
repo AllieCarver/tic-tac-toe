@@ -65,7 +65,8 @@ class TicTacGUI:
         self._background, self._background_rect = load_image('bg.jpg')
         self._start_img, dum_rec = load_image('startscreen.png', alpha=True)
         if pygame.font.get_init():
-            self._font = pygame.font.Font(None,80)
+            font = os.path.join('data', 'AlfaSlabOne-Regular.ttf')
+            self._font = pygame.font.Font(font,80)
         else:
             self._messagesurface = Surface((0,0))
             print 'font initialization failed'
